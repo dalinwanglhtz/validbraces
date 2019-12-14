@@ -11,30 +11,13 @@ public class BraceChecker {
 		String braces="()";
 		
 
-		while(true) {
-			if(string.contains(braces)) {
-				string = string.replace(braces, "");
-				continue;
-			}
-			System.out.println("String: "+string);
-			if(string.contains(cBraces)) {
-				string = string.replace(cBraces, "");
-				continue;
-			}
-			System.out.println("String: "+string);
-			if(string.contains(brackets)) {
-				string = string.replace(brackets, "");
-				continue;
-			}
-			System.out.println("String: "+string);
-			break;
+		while(!string.endsWith("#") && !string.isEmpty()) {
+			string = (string.contains(braces) ? string.replace(braces, "") : 
+				(string.contains(cBraces)?string.replace(cBraces, ""):
+					(string.contains(brackets)?string.replace(brackets, ""):string.concat("#"))));
 		}
 		
-		if(string.isEmpty()) {
-			return true;
-		} else {
-			return false;
-		}
+		return string.isEmpty();
 	}
 
 }
