@@ -2,14 +2,10 @@ package com.codewardev;
 
 // https://www.codewars.com/kata/valid-braces/train/java
 
-
 public class BraceChecker {
 
 	public boolean isValid(String string) {
-		String brackets="[]";
-		String cBraces="{}";
-		String braces="()";
-		
+		String brackets="[]", cBraces="{}", braces="()";
 
 		while(!string.endsWith("#") && !string.isEmpty()) {
 			string = (string.contains(braces) ? string.replace(braces, "") : 
